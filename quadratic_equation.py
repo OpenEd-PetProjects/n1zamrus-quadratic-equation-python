@@ -204,7 +204,7 @@ def discriminant(a: str | int, b: str | int, c: str | int) -> int:
 
 
 def _quadratic_roots(a: int, b: int, value: int) -> Solution:
-    denominator = 2 * a
+    denominator = 2 * abs(a)
     rational = Fraction(-b, denominator)
     if value == 0:
         return Solution("double_real", (ExactRoot(rational),))

@@ -32,6 +32,13 @@ def test_two_rational_roots_are_exact() -> None:
     assert [root.expression() for root in result.roots] == ["2", "1"]
 
 
+def test_negative_leading_coefficient_is_supported() -> None:
+    result = solve(-1, 3, -2)
+
+    assert result.status == "two_real"
+    assert len(result.roots) == 2
+
+
 def test_double_root() -> None:
     result = solve(1, -2, 1)
 
